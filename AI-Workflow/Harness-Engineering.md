@@ -80,7 +80,7 @@ QueryDSL/JPA 규칙을 정의한다.
 - 테스트 범위 기준
   
 -> 예시
-```
+-------------------------------------------------------
 # 테스트 하네스
 
 ## 목적
@@ -93,7 +93,7 @@ QueryDSL/JPA 규칙을 정의한다.
 
 기본 테스트 위치는 다음과 같다.
 
-```text
+text
 src/test/kotlin/kr/co/dozn/mx/lottecard
   module
     [feature-domain]
@@ -105,20 +105,19 @@ src/test/kotlin/kr/co/dozn/mx/lottecard
   domain
     [domain-name]
       repository
-```
 
 ## BDD 테스트 이름
 
 테스트 이름은 BDD 문장으로 작성한다.
 
-```kotlin
+kotlin
 @Test
 fun `Given 사용 가능한 loginId When 관리자 계정을 생성하면 Then ACTIVE 계정이 저장된다`() {
     // given
     // when
     // then
 }
-```
+
 
 ## MockK 기반 테스트 원칙
 
@@ -131,13 +130,13 @@ fun `Given 사용 가능한 loginId When 관리자 계정을 생성하면 Then A
 
 MockK 의존성이 없는 경우 테스트 하네스 구성 시 먼저 추가한다.
 
-```kotlin
+kotlin
 testImplementation("io.mockk:mockk")
-```
+
 
 서비스 테스트 예시는 다음과 같다.
 
-```kotlin
+kotlin
 @ExtendWith(MockKExtension::class)
 class AdminCommandServiceTest {
 
@@ -182,7 +181,7 @@ class AdminCommandServiceTest {
         confirmVerified(adminRepository, passwordEncoder)
     }
 }
-```
+
 
 ## 테스트 범위 기준
 
@@ -209,7 +208,8 @@ class AdminCommandServiceTest {
 
 - QueryDSL 조회 테스트 기준은 [Persistence, QueryDSL, JPA 규칙](persistence-querydsl-jpa.md)을 함께 확인한다.
 - 인증/인가 테스트 기준은 [인증 프로세스](authentication-process.md)를 따른다.
-```
+
+-------------------------------------------------------
 
 
 
